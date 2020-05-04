@@ -20,21 +20,9 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 1,
+   "execution_count": 171,
    "metadata": {},
-   "outputs": [
-    {
-     "ename": "ModuleNotFoundError",
-     "evalue": "No module named 'config'",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[1;31mModuleNotFoundError\u001b[0m                       Traceback (most recent call last)",
-      "\u001b[1;32m<ipython-input-1-a28a806ea1e2>\u001b[0m in \u001b[0;36m<module>\u001b[1;34m\u001b[0m\n\u001b[1;32m----> 1\u001b[1;33m \u001b[1;32mfrom\u001b[0m \u001b[0mconfig\u001b[0m \u001b[1;32mimport\u001b[0m \u001b[0mdb_password\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m",
-      "\u001b[1;31mModuleNotFoundError\u001b[0m: No module named 'config'"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "from config import db_password"
    ]
@@ -51,16 +39,6 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# List file address\n",
-    "#f'{file_dir}wikipedia.movies.json'"
-   ]
-  },
-  {
-   "cell_type": "code",
    "execution_count": 10,
    "metadata": {},
    "outputs": [],
@@ -68,77 +46,6 @@
     "# Open file\n",
     "with open(f'{file_dir}/wikipedia.movies.json', mode='r') as file:\n",
     "    wiki_movies_raw = json.load(file)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 11,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Note length/size of the file\n",
-    "#len(wiki_movies_raw)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 12,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# First 5 records\n",
-    "#wiki_movies_raw[:5]"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 13,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Last 5 records\n",
-    "#wiki_movies_raw[-5:]"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 14,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Some records in the middle\n",
-    "#wiki_movies_raw[3600:3700]"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 18,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Read file info from Kaggle download\n",
-    "#kaggle_metadata = pd.read_csv('movies_metadata.csv', low_memory=False)\n",
-    "#ratings = pd.read_csv('ratings.csv')"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 19,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Review file info\n",
-    "#movies_metadata.head()"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 20,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Check ratings info\n",
-    "#ratings.head()"
    ]
   },
   {
@@ -152,109 +59,6 @@
     "ratings = pd.read_csv(f'{file_dir}ratings.csv')\n",
     "# View DataFrame\n",
     "wiki_movies_df = pd.DataFrame(wiki_movies_raw)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 31,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Review Kaggle file\n",
-    "#kaggle_metadata.head()"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 32,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# View last rows of Kaggle file\n",
-    "#kaggle_metadata.tail()"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 33,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Look at a sample of the Kaggle file\n",
-    "#kaggle_metadata.sample()"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 34,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Test alternate ways to view file contents 1\n",
-    "#ratings.head()"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 35,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Test alternate ways to view file contents 2\n",
-    "#ratings.tail()"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 36,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Test alternate ways to view file contents 3\n",
-    "#ratings.sample(n=50)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 37,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# View DataFrame\n",
-    "#wiki_movies_df = pd.DataFrame(wiki_movies_raw)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 39,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# View rows of data in the DataFrame\n",
-    "#wiki_movies_df.head()"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 40,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# View column names\n",
-    "#wiki_movies_df.columns.tolist()"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 41,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "#Create a list comprehension\n",
-    "#wiki_movies = [movie for movie in wiki_movies_raw\n",
-    "               #if ('Director' in movie or 'Directed by' in movie)\n",
-    "                  # and 'imdb_link' in movie]\n",
-    "#len(wiki_movies)"
    ]
   },
   {
@@ -278,221 +82,6 @@
    "source": [
     "# Create new data frame\n",
     "wiki_movies_df = pd.DataFrame(wiki_movies)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 44,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# View new data frame info\n",
-    "#wiki_movies_df"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 45,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Make a copy of the movie file\n",
-    "#def clean_movie(movie):\n",
-    "    #movie = dict(movie) #create a non-destructive copy\n",
-    "    #return movie"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 46,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# More info on movies with Arabic\n",
-    "#wiki_movies_df[wiki_movies_df['Arabic'].notnull()]['Arabic']"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 47,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# More info on movies with Arabic\n",
-    "#wiki_movies_df[wiki_movies_df['Adaptation by'].notnull()]"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 48,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Clean Arabic titles\n",
-    "#wiki_movies_df[wiki_movies_df['Arabic'].notnull()]['url']"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 49,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Review wikipedia info\n",
-    "#wiki_movies_df[wiki_movies_df.notnull()]['url']"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 50,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Test column info\n",
-    "#wiki_movies_df[wiki_movies_df.notnull()]['url'].head()"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 51,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Check data frame info\n",
-    "#wiki_movies_df.head()"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 52,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Sort by column name\n",
-    "#sorted(wiki_movies_df.columns.tolist())"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 54,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Dictionary for alternative titles\n",
-    "\n",
-    "#def clean_movie(movie):\n",
-    "    #movie = dict(movie) #create a non-destructive copy\n",
-    "    #alt_titles = {}\n",
-    "    #for key in ['Also known as','Arabic','Cantonese','Chinese','French',\n",
-    "                #'Hangul','Hebrew','Hepburn','Japanese','Literally',\n",
-    "                #'Mandarin','McCune–Reischauer','Original title','Polish',\n",
-    "                #'Revised Romanization','Romanized','Russian',\n",
-    "                #'Simplified','Traditional','Yiddish']:\n",
-    "        #if key in movie:\n",
-    "            \n",
-    "            #return movie"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 55,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Double check\n",
-    "\n",
-    "#def clean_movie(movie):\n",
-    "    #alt_titles = {}\n",
-    "    #for key in ['Also known as','Arabic','Cantonese','Chinese','French',\n",
-    "                #'Hangul','Hebrew','Hepburn','Japanese','Literally',\n",
-    "                #'Mandarin','McCune–Reischauer','Original title','Polish',\n",
-    "                #'Revised Romanization','Romanized','Russian',\n",
-    "                #'Simplified','Traditional','Yiddish']:\n",
-    "        #if key in movie:\n",
-    "            \n",
-    "            #return movie"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 56,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Remove the key-value pair and add to the alternative titles dictionary.\n",
-    "\n",
-    "#def clean_movie(movie):\n",
-    "    #movie = dict(movie) #create a non-destructive copy\n",
-    "    #alt_titles = {}\n",
-    "    #for key in ['Also known as','Arabic','Cantonese','Chinese','French',\n",
-    "                #'Hangul','Hebrew','Hepburn','Japanese','Literally',\n",
-    "                #'Mandarin','McCune–Reischauer','Original title','Polish',\n",
-    "                #'Revised Romanization','Romanized','Russian',\n",
-    "                #'Simplified','Traditional','Yiddish']:\n",
-    "        #if key in movie:\n",
-    "            #alt_titles[key] = movie[key]\n",
-    "            #movie.pop(key)\n",
-    "\n",
-    "    #return movie"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 58,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "#After looping through every key, add the alternative titles dict to the movie object.\n",
-    "\n",
-    "#def clean_movie(movie):\n",
-    "    #movie = dict(movie) #create a non-destructive copy\n",
-    "    #alt_titles = {}\n",
-    "    #for key in ['Also known as','Arabic','Cantonese','Chinese','French',\n",
-    "    #            'Hangul','Hebrew','Hepburn','Japanese','Literally',\n",
-    "     #           'Mandarin','McCune–Reischauer','Original title','Polish',\n",
-    "      #          'Revised Romanization','Romanized','Russian',\n",
-    "       #         'Simplified','Traditional','Yiddish']:\n",
-    "        #if key in movie:\n",
-    "         #   alt_titles[key] = movie[key]\n",
-    "          #  movie.pop(key)\n",
-    "    #if len(alt_titles) > 0:\n",
-    "        #movie['alt_titles'] = alt_titles\n",
-    "\n",
-    "    #return movie"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 59,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Make a list of cleaned movies\n",
-    "#clean_movies = [clean_movie(movie) for movie in wiki_movies]"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 60,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Create a data frame and print the list\n",
-    "#wiki_movies_df = pd.DataFrame(clean_movies)\n",
-    "#sorted(wiki_movies_df.columns.tolist())"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 61,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Consolidate columns\n",
-    "\n",
-    "#def change_column_name('Directed by', 'Director'):\n",
-    " #   if 'Directed by' in movie:\n",
-    "  #      movie['Director'] = movie.pop('Directed by')"
    ]
   },
   {
@@ -547,16 +136,6 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 63,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Review new list\n",
-    "#wiki_movies"
-   ]
-  },
-  {
-   "cell_type": "code",
    "execution_count": 64,
    "metadata": {},
    "outputs": [],
@@ -565,17 +144,6 @@
     "\n",
     "clean_movies = [clean_movie(movie) for movie in wiki_movies]\n",
     "wiki_movies_df = pd.DataFrame(clean_movies)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 65,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# View updated info\n",
-    "\n",
-    "#wiki_movies_df"
    ]
   },
   {
@@ -831,16 +399,6 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 67,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Get a list of all columns and the number of null values in each\n",
-    "#[[column,wiki_movies_df[column].isnull().sum()] for column in wiki_movies_df.columns]"
-   ]
-  },
-  {
-   "cell_type": "code",
    "execution_count": 68,
    "metadata": {},
    "outputs": [
@@ -894,22 +452,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 70,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Re-check the data frame with new set of columns, equal to 21\n",
-    "#wiki_movies_df.head()"
-   ]
-  },
-  {
-   "cell_type": "code",
    "execution_count": 72,
    "metadata": {},
    "outputs": [],
    "source": [
     "#Remove anything without \"Box office\" info\n",
-    "\n",
     "box_office = wiki_movies_df['Box office'].dropna() "
    ]
   },
@@ -967,16 +514,6 @@
    "source": [
     "# Regex for getting $ figures Form 1\n",
     "form_one = r'\\$\\d+\\.?\\d*\\s*[mb]illion'"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 78,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Print the number of matches to new variable\n",
-    "#box_office.str.contains(form_one, flags=re.IGNORECASE).sum()"
    ]
   },
   {
@@ -1096,63 +633,6 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 87,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Add numeric structure using regex\n",
-    "#form_one = r'\\$\\s*\\d+\\.?\\d*\\s*[mb]illi?on'"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 88,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# See results\n",
-    "#box_office.str.extract(f'({form_one}|{form_two})')"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 89,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "#Define the code step by step in 8.3.10\n",
-    "#def parse_dollars(s):\n",
-    "    # if s is not a string, return NaN\n",
-    "\n",
-    "    # if input is of the form $###.# million\n",
-    "\n",
-    "        # remove dollar sign and \" million\"\n",
-    "\n",
-    "        # convert to float and multiply by a million\n",
-    "\n",
-    "        # return value\n",
-    "\n",
-    "    # if input is of the form $###.# billion\n",
-    "\n",
-    "        # remove dollar sign and \" billion\"\n",
-    "\n",
-    "        # convert to float and multiply by a billion\n",
-    "\n",
-    "        # return value\n",
-    "\n",
-    "    # if input is of the form $###,###,###\n",
-    "\n",
-    "        # remove dollar sign and commas\n",
-    "\n",
-    "        # convert to float\n",
-    "\n",
-    "        # return value\n",
-    "\n",
-    "    # otherwise, return NaN"
-   ]
-  },
-  {
-   "cell_type": "code",
    "execution_count": 90,
    "metadata": {},
    "outputs": [],
@@ -1222,16 +702,6 @@
    "source": [
     "# Drop box office info but the data frame is returning a warning message\n",
     "wiki_movies_df.drop('Box office', axis=1, inplace=True)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 93,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "#wiki_movies_df['box_office'] = box_office.str.extract(f'({form_one}|{form_two})', flags=re.IGNORECASE)[0].apply(parse_dollars)\n",
-    "#box_office.str.extract"
    ]
   },
   {
@@ -1460,26 +930,6 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 106,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# View running time info\n",
-    "#running_time"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 107,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Check running time totals\n",
-    "#running_time.str.contains(r'^\\d*\\s*minutes$', flags=re.IGNORECASE).sum()"
-   ]
-  },
-  {
-   "cell_type": "code",
    "execution_count": 108,
    "metadata": {},
    "outputs": [
@@ -1508,26 +958,6 @@
    "source": [
     "# Look at running time string\n",
     "running_time[running_time.str.contains(r'^\\d*\\s*minutes$', flags=re.IGNORECASE) != True]"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 110,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Count total running time lines of data\n",
-    "#running_time.str.contains(r'^\\d*\\s*m', flags=re.IGNORECASE).sum()"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 112,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# View running time totals\n",
-    "#running_time[running_time.str.contains(r'^\\d*\\s*m', flags=re.IGNORECASE) != True]"
    ]
   },
   {
@@ -1568,26 +998,6 @@
    "source": [
     "# Remove time info from movies\n",
     "wiki_movies_df.drop('Running time', axis=1, inplace=True)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 117,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# View datatypes\n",
-    "#kaggle_metadata.dtypes"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 119,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Check the value types for adult\n",
-    "#kaggle_metadata['adult'].value_counts()"
    ]
   },
   {
@@ -1865,26 +1275,6 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 127,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Info on ratings data\n",
-    "#ratings.info(null_counts=True)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 128,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# View datetime in the same format\n",
-    "#pd.to_datetime(ratings['timestamp'], unit='s')"
-   ]
-  },
-  {
-   "cell_type": "code",
    "execution_count": 129,
    "metadata": {},
    "outputs": [],
@@ -1937,15 +1327,6 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 131,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "##Completed thru 8.3.12##"
-   ]
-  },
-  {
-   "cell_type": "code",
    "execution_count": 132,
    "metadata": {},
    "outputs": [],
@@ -1970,76 +1351,6 @@
     "# release_date_wiki        release_date_kaggle\n",
     "# Language                 original_language\n",
     "# Production company(s)    production_companies "
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 134,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Print title columns to review\n",
-    "#movies_df[['title_wiki','title_kaggle']]"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 135,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Unmatched titles \n",
-    "#movies_df[movies_df['title_wiki'] != movies_df['title_kaggle']][['title_wiki','title_kaggle']]"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 136,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Check for missing titles\n",
-    "#movies_df[(movies_df['title_kaggle'] == '') | (movies_df['title_kaggle'].isnull())]"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 137,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Scatter plot to find missing info\n",
-    "#movies_df.fillna(0).plot(x='running_time', y='runtime', kind='scatter')"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 138,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Scatter plot for budget\n",
-    "#movies_df.fillna(0).plot(x='budget_wiki',y='budget_kaggle', kind='scatter')"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 139,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Scatter plot to compare box office and revenue data\n",
-    "#movies_df.fillna(0).plot(x='box_office', y='revenue', kind='scatter')"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 140,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Less than $1B\n",
-    "#movies_df.fillna(0)[movies_df['box_office'] < 10**9].plot(x='box_office', y='revenue', kind='scatter')"
    ]
   },
   {
@@ -2221,47 +1532,6 @@
    "source": [
     "# New code to drop duplicate info\n",
     "movies_df = movies_df.drop(movies_df[(movies_df['release_date_wiki'] > '1996-01-01') & (movies_df['release_date_kaggle'] < '1965-01-01')].index)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 145,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Review changes in the data frame\n",
-    "#movies_df[movies_df['release_date_wiki'].isnull()]"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 146,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Compare language info, coded out since it returns an error. \n",
-    "#movies_df['Language'].value_counts()\n",
-    "#movies_df['Language'].apply(lambda x: tuple(x) if type(x) == list else x).value_counts(dropna=False)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 147,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Run a value count for language info\n",
-    "#movies_df['original_language'].value_counts(dropna=False)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 148,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Production company info\n",
-    "#movies_df[['Production company(s)','production_companies']]"
    ]
   },
   {
@@ -2793,16 +2063,6 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 153,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Check the movies data frame\n",
-    "#movies_df['video'].value_counts(dropna=False)"
-   ]
-  },
-  {
-   "cell_type": "code",
    "execution_count": 154,
    "metadata": {},
    "outputs": [],
@@ -2839,50 +2099,6 @@
     "                  'Composer(s)':'composers',\n",
     "                  'Based on':'based_on'\n",
     "                 }, axis='columns', inplace=True)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 156,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "#NOTE (I've been getting this warning throughout the code)\n",
-    "    #If you did not use .loc to reorder the columns and instead passed a list \n",
-    "    #of column names to the indexing operator (i.e. movies_df = movies_df[[‘imdb_id’, ‘title_kaggle’, … ]]), \n",
-    "    #you may receive a SettingWithCopyWarning. Don’t panic! This isn’t an error, so your code will continue \n",
-    "    #to work, but it is a warning that your code may not behave as you expect. In this case, your code will \n",
-    "    #work fine, but for best practices, use .loc instead to avoid this warning."
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 157,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "####### Start 8.4.2 #######"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 158,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Count group info\n",
-    "#rating_counts = ratings.groupby(['movieId','rating'], as_index=False).count()"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 159,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Rename userid column\n",
-    "#rating_counts = ratings.groupby(['movieId','rating'], as_index=False).count() \\\n",
-    "                #.rename({'userId':'count'}, axis=1) "
    ]
   },
   {
@@ -2930,21 +2146,12 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 164,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "####### Section 8.4.2 is complete #######"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 165,
+   "execution_count": 172,
    "metadata": {},
    "outputs": [],
    "source": [
     "#from config import db_password\n",
-    "db_password = 'Your PW'"
+    "db_password = 'Your Password'"
    ]
   },
   {
@@ -2970,69 +2177,25 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 168,
+   "execution_count": 1,
    "metadata": {},
    "outputs": [],
    "source": [
-    "# Dataframe info\n",
-    "#movies_df.to_sql(name='movies', con=engine)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 140,
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "importing rows 0 to 1000000...Done. 153.24349308013916 total seconds elapsed\n",
-      "importing rows 1000000 to 2000000...Done. 310.7449052333832 total seconds elapsed\n",
-      "importing rows 2000000 to 3000000...Done. 466.8300361633301 total seconds elapsed\n",
-      "importing rows 3000000 to 4000000...Done. 626.9293344020844 total seconds elapsed\n",
-      "importing rows 4000000 to 5000000...Done. 783.3151361942291 total seconds elapsed\n",
-      "importing rows 5000000 to 6000000...Done. 945.0954577922821 total seconds elapsed\n",
-      "importing rows 6000000 to 7000000...Done. 1105.7013621330261 total seconds elapsed\n",
-      "importing rows 7000000 to 8000000...Done. 1265.6424224376678 total seconds elapsed\n",
-      "importing rows 8000000 to 9000000...Done. 1420.0229074954987 total seconds elapsed\n",
-      "importing rows 9000000 to 10000000...Done. 1575.2470405101776 total seconds elapsed\n",
-      "importing rows 10000000 to 11000000...Done. 1734.865639448166 total seconds elapsed\n",
-      "importing rows 11000000 to 12000000...Done. 1891.5929367542267 total seconds elapsed\n",
-      "importing rows 12000000 to 13000000...Done. 2052.5181019306183 total seconds elapsed\n",
-      "importing rows 13000000 to 14000000...Done. 2207.0345973968506 total seconds elapsed\n",
-      "importing rows 14000000 to 15000000...Done. 2368.765822172165 total seconds elapsed\n",
-      "importing rows 15000000 to 16000000...Done. 2522.887981891632 total seconds elapsed\n",
-      "importing rows 16000000 to 17000000...Done. 2679.897340297699 total seconds elapsed\n",
-      "importing rows 17000000 to 18000000...Done. 2849.5745255947113 total seconds elapsed\n",
-      "importing rows 18000000 to 19000000...Done. 3047.2447760105133 total seconds elapsed\n",
-      "importing rows 19000000 to 20000000...Done. 3229.4597659111023 total seconds elapsed\n",
-      "importing rows 20000000 to 21000000...Done. 3397.964234828949 total seconds elapsed\n",
-      "importing rows 21000000 to 22000000...Done. 3556.7901842594147 total seconds elapsed\n",
-      "importing rows 22000000 to 23000000...Done. 3729.17796087265 total seconds elapsed\n",
-      "importing rows 23000000 to 24000000...Done. 3891.7134199142456 total seconds elapsed\n",
-      "importing rows 24000000 to 25000000...Done. 4056.5999281406403 total seconds elapsed\n",
-      "importing rows 25000000 to 26000000...Done. 4219.833861112595 total seconds elapsed\n",
-      "importing rows 26000000 to 26024289...Done. 4223.6961126327515 total seconds elapsed\n"
-     ]
-    }
-   ],
-   "source": [
     "# create a variable for the number of rows imported\n",
-    "rows_imported = 0\n",
-    "start_time = time.time()\n",
-    "for data in pd.read_csv(f'{file_dir}ratings.csv', chunksize=1000000):\n",
+    "#rows_imported = 0\n",
+    "#start_time = time.time()\n",
+    "#for data in pd.read_csv(f'{file_dir}ratings.csv', chunksize=1000000):\n",
     "\n",
     "    # print out the range of rows that are being imported\n",
-    "    print(f'importing rows {rows_imported} to {rows_imported + len(data)}...', end='')\n",
+    " #   print(f'importing rows {rows_imported} to {rows_imported + len(data)}...', end='')\n",
     "\n",
-    "    data.to_sql(name='ratings', con=engine, if_exists='append')\n",
+    "#    data.to_sql(name='ratings', con=engine, if_exists='append')\n",
     "\n",
     "    # increment the number of rows imported by the size of 'data'\n",
-    "    rows_imported += len(data)\n",
+    " #   rows_imported += len(data)\n",
     "\n",
     "    # print that the rows have finished importing\n",
-    "    print(f'Done. {time.time() - start_time} total seconds elapsed')"
+    "  #  print(f'Done. {time.time() - start_time} total seconds elapsed')"
    ]
   },
   {
@@ -3040,9 +2203,7 @@
    "execution_count": null,
    "metadata": {},
    "outputs": [],
-   "source": [
-    "#######Completed under 2 hours with 141 rows of info on 5/2/20#######"
-   ]
+   "source": []
   }
  ],
  "metadata": {
